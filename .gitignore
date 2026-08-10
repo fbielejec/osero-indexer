@@ -1,0 +1,11 @@
+.env
+discovery/.venv/
+__pycache__/
+*.pyc
+.claude/scheduled_tasks.lock
+/target
+*.db
+dist/
+.env
+run.log
+*.log
