@@ -27,7 +27,7 @@ smoke: # Feature-gated live smoke test -- hits the RPC at a pinned block. Needs 
 
 .PHONY: index
 index: # Build, then run the daemon: backfills from inception, then follows head. Pace RPC calls under a free-tier rate limit by prefixing the knob, e.g.: OSERO_RPC_INTERVAL_MS=1000 make index
-	set -a; . ./.env; set +a; ./target/release/osero-indexer
+	RUST_LOG=info set -a; . ./.env; set +a; ./target/release/osero-indexer
 
 .PHONY: dashboard
 dashboard: # Serve the crate root so the dashboard can fetch ../dist/*.json. Then open http://localhost:8091/dashboard/

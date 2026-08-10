@@ -1,0 +1,10 @@
+ilk               = "ALLOCATOR-PRYSM-A"
+vault             = "0x146181Aa9B362EaEC2eC3aDd7429a06D53B43d1a"   # AllocatorVault
+buffer            = "0xD0BB61b34771146e31055f20f329cDf97429F889"   # AllocatorBuffer
+proxy             = "0x6d370e359e9cbd0Fd35Bb38fAF705D84238CB884"   # ALM proxy (holds spUSDS)
+venue_pool        = "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"   # SparkLend Pool
+venue_atoken      = "0xc02ab1a5eaa8d1b114ef786d9bde108cd4364359"   # spUSDS
+venue_vdebt       = "0x8c147debea24Fb98ade8dDa4bf142992928b449e"   # variableDebtUSDS
+usds              = "0xdC035D45d973E3EC169d2276DDab16f1e407384F"   # USDS token
+susds             = "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD"   # sUSDS (SSR source)
+inception_block   = 25601435                                       # first economic draw (P&L inception)
