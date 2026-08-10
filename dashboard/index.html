@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osero P&amp;L Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<main id="app">
+  <header class="topbar">
+    <h1>Is Osero making money?</h1>
+    <div class="asof" id="asof">loading&hellip;</div>
+  </header>
+
+  <!-- Friendly error / empty state -->
+  <section id="notice" class="notice hidden"></section>
+
+  <div id="content" class="grid hidden">
+
+    <!-- 1. Headline tile -->
+    <section id="headline" class="tile headline">
+      <div class="verdict" id="verdict">&mdash;</div>
+      <div class="headline-figs">
+        <div class="fig">
+          <span class="fig-label">Net margin</span>
+          <span class="fig-val" id="net-margin-bps">&mdash;</span>
+        </div>
+        <div class="fig">
+          <span class="fig-label">Cumulative net</span>
+          <span class="fig-val" id="cum-net-big">&mdash;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Current inputs -->
+    <section class="tile">
+      <h2>Current inputs</h2>
+      <div class="cards" id="inputs"></div>
+    </section>
+
+    <!-- 3. Cumulative P&L -->
+    <section class="tile">
+      <h2>Cumulative P&amp;L <span class="unit">(USDS)</span></h2>
+      <table class="kv" id="pnl"></table>
+    </section>
+
+    <!-- 4. Time series chart -->
+    <section class="tile wide">
+      <h2>Net margin over time <span class="unit" id="chart-metric-label">(inst_margin_bps)</span></h2>
+      <div class="chart-wrap">
+        <canvas id="chart" width="900" height="320" role="img"
+                aria-label="Line chart of net margin in basis points over time"></canvas>
+      </div>
+      <div class="chart-empty hidden" id="chart-empty">Not enough series data to plot yet.</div>
+    </section>
+
+    <!-- 5. Break-even -->
+    <section class="tile wide">
+      <h2>Break-even &mdash; the sign flips if&hellip;</h2>
+      <div class="cards breakeven" id="breakeven"></div>
+    </section>
+
+  </div>
+
+  <footer class="foot">
+    Reads <code>../dist/headline.json</code> &amp; <code>../dist/series.json</code> &middot;
+    <span id="refresh-note"></span>
+  </footer>
+</main>
+
+<script src="app.js"></script>
